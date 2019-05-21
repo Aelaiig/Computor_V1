@@ -17,3 +17,11 @@ def simplifier(equation):
     mapping = list(map(simplifier2, tab))
     simple = ' '.join(mapping)
     return simple
+
+def ft_ftoa(number):
+    ret = str(number)
+    ln = len(ret)
+    check = ret[ln - 2:]
+    if check == ".0":
+        return ret[:ln - 2]
+    return ret
