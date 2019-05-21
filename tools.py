@@ -6,7 +6,7 @@ def simplifier2(item):
         return new_item
     elif item == 'X':
         return item.replace('X', '1 * X^1')
-    elif item.find('X^') != -1:
+    elif item[0] == 'X' and item[1] == '^':
         new_item = "1 * " + item
         return new_item
     else :
