@@ -32,5 +32,4 @@ def simply(equa):
         except KeyError:
             numbers[int(polynome[1])] = float(polynome[0])
 
-    v.ft_simplyprint(numbers)
     return(numbers)
