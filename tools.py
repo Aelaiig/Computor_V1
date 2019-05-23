@@ -14,3 +14,12 @@ def ft_ftoa(number):
     if check == ".0":
         return ret[:ln - 2]
     return ret
+
+
+def sqrt(number):
+    i = 0
+    while i < number :
+        if (i * i) == number:
+            return i
+        i += 0.00000001
+    return 0
