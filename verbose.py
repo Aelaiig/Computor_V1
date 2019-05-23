@@ -32,7 +32,11 @@ def ft_simplyprint(numbers):
                 to_print = to_print + tools.ft_ftoa(numbers[degree]) + " * X^"+ str(degree)
                 printed = 1
             else:
-                to_print = to_print + sign + tools.ft_ftoa(numbers[degree]) + " * X^"+ str(degree)
+                if degree != 0:
+                    to_print = to_print + sign + tools.ft_ftoa(numbers[degree]) + " * X^"+ str(degree)
+                else:
+                    to_print = to_print + sign + tools.ft_ftoa(numbers[degree])
+
     if to_print != "Reduced form: ":
         to_print = to_print + " = 0"
     else:
