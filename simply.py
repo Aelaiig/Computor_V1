@@ -20,16 +20,16 @@ def simply(equa):
     match = re.findall(pattern, splitted[0])
     for polynome in match:
         try :
-            numbers[int(polynome[1])] += float(polynome[0])
+            numbers[int(polynome[1].replace(' ', ''))] += float(polynome[0].replace(' ', ''))
         except KeyError:
-            numbers[int(polynome[1])] = float(polynome[0])
+            numbers[int(polynome[1].replace(' ', ''))] = float(polynome[0].replace(' ', ''))
 
     #recuperation et symplification des polynomes cote droit du "="
     match = re.findall(pattern, splitted[1])
     for polynome in match:
         try :
-            numbers[int(polynome[1])] -= float(polynome[0])
+            numbers[int(polynome[1])] -= float(polynome[0].replace(' ', ''))
         except KeyError:
-            numbers[int(polynome[1])] = float(polynome[0])
+            numbers[int(polynome[1])] = float(polynome[0].replace(' ', ''))
 
     return(numbers)
