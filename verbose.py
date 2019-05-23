@@ -22,6 +22,7 @@ def ft_simplyprint(numbers):
     to_print = "Reduced form: "
     printed = 0
     sign = ""
+    higest = 0
 
     for degree in table:
         if numbers[degree] < 0:
@@ -29,20 +30,29 @@ def ft_simplyprint(numbers):
             numbers[degree] = -numbers[degree]
         else:
             sign = " + "
-        if printed == 0:
+
+        if numbers[degree] != 0:
+            if numbers[degree] < 0:
+                sign = " - "
+                numbers[degree] = -numbers[degree]
+            else:
+                sign = " + "
+            if printed == 0:
+                if sign == " - ":
+                    to_print = to_print + "-"
+                to_print = to_print + tools.ft_ftoa(numbers[degree]) + " * X^"+ str(degree)
+                printed = 1
+            else:
+                if degree != 0:
+                    to_print = to_print + sign + tools.ft_ftoa(numbers[degree]) + " * X^"+ str(degree)
+                else:
+                    to_print = to_print + sign + tools.ft_ftoa(numbers[degree])
             if sign == " - ":
-                to_print = to_print + "-"
-            to_print = to_print + tools.ft_ftoa(numbers[degree]) + " * X^"+ str(degree)          
-            printed = 1
-        else:
-            to_print = to_print + sign + tools.ft_ftoa(numbers[degree]) + " * X^"+ str(degree)
-        if sign == " - ":
                 numbers[degree] = -numbers[degree]
 
-    to_print = to_print + " = 0"
+    if to_print != "Reduced form: ":
+        to_print = to_print + " = 0"
+    else:
+        to_print += "0"
     print(to_print)
-    print("Polynomial degree: ", table[0])
-    if table[0] > 2 :
-        print ("The polynomial degree is strictly greater than 2, I can't solve.")
-        sys.exit()
     return table[0]

@@ -31,5 +31,4 @@ def simply(equa):
             numbers[int(polynome[1])] -= float(polynome[0].replace(' ', ''))
         except KeyError:
             numbers[int(polynome[1])] = float(polynome[0].replace(' ', ''))
-
     return(numbers)
