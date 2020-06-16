@@ -17,20 +17,14 @@ def ft_missing_equal():
 def ft_simplyprint(numbers):
 
     #cree un tableau contenant toutes les puissances trie dans l'ordre decroissant
-    table = sorted(numbers, reverse=True)
+    table = sorted(numbers, reverse=False)
     #Cree la chaine a afficher avec l'equation simplifie
     to_print = "Reduced form: "
     printed = 0
     sign = ""
-    higest = 0
+    # higest = 0
 
     for degree in table:
-        if numbers[degree] < 0:
-            sign = " - "
-            numbers[degree] = -numbers[degree]
-        else:
-            sign = " + "
-
         if numbers[degree] != 0:
             if numbers[degree] < 0:
                 sign = " - "
@@ -55,4 +49,6 @@ def ft_simplyprint(numbers):
     else:
         to_print += "0"
     print(to_print)
-    return table[0]
+    if len(table) > 0:
+        return table[len(table) - 1]
+    return 0

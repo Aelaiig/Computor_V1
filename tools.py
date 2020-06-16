@@ -5,7 +5,6 @@ def simplifier(equation):
     simple = re.sub(r"(^|[ +=-])(\d+(?:(\.\d+)?))($|[ ][^\*])", r" \2 * X^0\4", equ) # case X alone
     simple2 = re.sub(r"([\+\-\=]|^)\s*[X]([\s*]|$)", r"\1 1 * X^1 ", simple) # case N alone
     simple3 = re.sub(r"([^\*]|^)([ ]|^)([X][\^])", r"\1 1 * \3", simple2) # case X^N
-    # print('simple',  simple, '\n', simple2, '\n', simple3, '\n')
     return simple3
 
 def ft_ftoa(number):
@@ -16,11 +15,18 @@ def ft_ftoa(number):
         return ret[:ln - 2]
     return ret
 
+def ft_round(x) :
+    s = str(x)
+    j = s.find(".")
+    if j == -1 :
+        return(x)
+    round = s[:j + 5]
+    return (float(round))
 
-def sqrt(number):
-    i = 0
-    while i < number :
-        if (i * i) == number:
-            return i
-        i += 0.00000001
-    return 0
+def sqrt(x) :
+    i = 0.00001
+    if x == 0.0 :
+        return 0.0
+    while i * i < x :
+        i += 0.00001
+    return (ft_round(i))

@@ -9,7 +9,6 @@ import tools
 if __name__ == "__main__":
     equation = r.reader(sys.argv)
     formatted = tools.simplifier(equation)
-    print(formatted)
     simply_form = s.simply(formatted)
     degree = verb.ft_simplyprint(simply_form)
     solver.solver(simply_form, degree)

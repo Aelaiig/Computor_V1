@@ -16,5 +16,4 @@ def checkArg(argv):
 
 def reader(argv):
     result = checkArg(argv)
-    # equation = checkSynthax()
     return result
