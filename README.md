@@ -2,7 +2,7 @@
 Programme qui résout une équation polynomiale de degré inférieur ou égal à 2
 
 ## Exécution
-Les entrées sont formattées de type a ∗ X^p
+Les entrées sont formattées de type a ∗ X^p <br />
 ```python3 main.py "<équation>"```
 
 ## Sources
