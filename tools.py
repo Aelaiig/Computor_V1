@@ -23,10 +23,15 @@ def ft_round(x) :
     round = s[:j + 5]
     return (float(round))
 
-def sqrt(x) :
-    i = 0.00001
-    if x == 0.0 :
-        return 0.0
-    while i * i < x :
-        i += 0.00001
-    return (ft_round(i))
+# sqrt: x = (x + x/delta)/2 Algorithme de Babylone, Méthode de Héron 
+
+def sqrt(x, delta, prevResult, i):
+    if (i < 1000): # to avoid too long calcul
+        i += 1
+        x = (x + delta / x)/2
+        if x == prevResult:
+            return (ft_round(x))
+        else:
+            return sqrt(x, delta, x, i)
+    else:
+        return (ft_round(x))

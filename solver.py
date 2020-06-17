@@ -24,9 +24,9 @@ def degree_one(polynomes):
 
 def degree_two(polynomes) :
     print("Polynomial degree: 2")
-    a = 1
-    b = 1
-    c = 1
+    a = 0
+    b = 0
+    c = 0
     if 2 in polynomes :
         a = polynomes[2]
     if 1 in polynomes :
@@ -40,8 +40,8 @@ def degree_two(polynomes) :
     if discriminant < 0 :
         print('Discriminant is strictly negatif, there is no real solution but two complex :')
         v.verbose('Solution formules : x1 = (-b-i√∆)/(2a) et x2 = (-b+i√∆)/(2a)')
-        x1 = "(" + str(-b) + " − i" + str(tools.sqrt(discriminant * -1)) + ") / " + str(2 * a)
-        x2 = "(" + str(-b) + " + i" + str(tools.sqrt(discriminant * -1)) + ") / " + str(2 * a)
+        x1 = "(" + str(-b) + " − i" + str(tools.sqrt(1, discriminant * -1, None, 0)) + ") / " + str(2 * a)
+        x2 = "(" + str(-b) + " + i" + str(tools.sqrt(1, discriminant * -1, None, 0)) + ") / " + str(2 * a)
         print(x1)
         print(x2)
     if discriminant == 0 :
@@ -53,8 +53,8 @@ def degree_two(polynomes) :
     if discriminant > 0 :
         print('Discriminant is strictly positive, the two solutions are :')
         v.verbose('Solution formules : x1 = (-b-√∆)/(2a) et x2 = (-b+√∆)/(2a)')
-        x1 = (- b - (discriminant ** 0.5)) / (2 * a)
-        x2 = (- b + (discriminant ** 0.5)) / (2 * a)
+        x1 = (- b - (tools.sqrt(1, discriminant, None, 0))) / (2 * a)
+        x2 = (- b + (tools.sqrt(1, discriminant, None, 0))) / (2 * a)
         print(tools.ft_round(x1))
         print(tools.ft_round(x2))
     
